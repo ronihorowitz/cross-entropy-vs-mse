@@ -8,86 +8,45 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #fff;
-    color: #111;
-    padding: 28px 24px;
-    max-width: 900px;
-    margin: auto;
+    background: #fff; color: #111;
+    padding: 28px 24px; max-width: 900px; margin: auto;
   }
   h1 { font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; }
   .subtitle { font-size: 0.84rem; color: #666; margin-bottom: 20px; }
-  .section-label {
-    font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.06em; color: #777; margin-bottom: 8px;
-  }
-
-  /* Tabs */
-  .tabs { display: flex; gap: 4px; margin-bottom: 22px; }
-  .tab {
-    padding: 7px 18px; border-radius: 6px; border: 1.5px solid #ddd;
-    background: transparent; cursor: pointer; font-size: 0.85rem; font-weight: 500;
-    color: #444; transition: all 0.15s;
-  }
+  .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #777; margin-bottom: 8px; }
+  .tabs { display: flex; gap: 4px; margin-bottom: 22px; flex-wrap: wrap; }
+  .tab { padding: 7px 18px; border-radius: 6px; border: 1.5px solid #ddd; background: transparent; cursor: pointer; font-size: 0.85rem; font-weight: 500; color: #444; transition: all 0.15s; }
   .tab.active { background: #2563eb; color: #fff; border-color: #2563eb; }
   .tab:hover:not(.active) { border-color: #aaa; }
-
   .panel { display: none; }
   .panel.active { display: block; }
-
-  /* Charts */
   .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
-  .chart-box {
-    border: 1.5px solid #e5e7eb; border-radius: 10px;
-    padding: 14px; background: #f9fafb;
-  }
-  .chart-box h3 { font-size: 0.88rem; font-weight: 600; margin-bottom: 10px; }
+  .chart-box { border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 14px; background: #f9fafb; }
+  .chart-box h3 { font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; }
   canvas { width: 100% !important; display: block; }
-
-  /* Insights */
   .insight-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
   .insight { border-radius: 8px; padding: 12px 14px; font-size: 0.8rem; line-height: 1.5; }
   .insight.ce  { background: #eff6ff; border-left: 3px solid #2563eb; }
   .insight.mse { background: #fef9f0; border-left: 3px solid #f59e0b; }
   .insight strong { display: block; margin-bottom: 3px; font-size: 0.82rem; }
-
-  /* Formulas */
   .formula-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .formula-box { border-radius: 8px; padding: 14px; font-size: 0.82rem; line-height: 1.7; }
   .formula-box.ce  { background: #eff6ff; border: 1.5px solid #bfdbfe; }
   .formula-box.mse { background: #fffbeb; border: 1.5px solid #fde68a; }
-  .formula-box h4  { font-size: 0.88rem; font-weight: 700; margin-bottom: 6px; }
-  .formula-box code {
-    font-family: 'Courier New', monospace; font-size: 0.85rem;
-    background: rgba(0,0,0,0.05); padding: 2px 5px; border-radius: 3px;
-  }
-
-  /* Interactive */
+  .formula-box h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 6px; }
+  .formula-box code { font-family: 'Courier New', monospace; font-size: 0.85rem; background: rgba(0,0,0,0.05); padding: 2px 5px; border-radius: 3px; }
   .slider-controls { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
   .control-group { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; }
   .control-group label { font-weight: 500; white-space: nowrap; }
   input[type=range] { width: 140px; accent-color: #2563eb; }
-  .val-badge {
-    padding: 2px 10px; border-radius: 20px; font-size: 0.82rem; font-weight: 600;
-    background: #2563eb; color: #fff; min-width: 44px; text-align: center;
-  }
-  select {
-    padding: 4px 8px; border-radius: 5px;
-    border: 1.5px solid #ddd; font-size: 0.85rem;
-  }
-
+  .val-badge { padding: 2px 10px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; background: #2563eb; color: #fff; min-width: 44px; text-align: center; }
+  select { padding: 4px 8px; border-radius: 5px; border: 1.5px solid #ddd; font-size: 0.85rem; }
   .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
-  .metric {
-    border: 1.5px solid #e5e7eb; border-radius: 8px;
-    padding: 10px 12px; background: #f9fafb; text-align: center;
-  }
-  .metric .mlabel {
-    font-size: 0.72rem; color: #888; text-transform: uppercase;
-    letter-spacing: 0.05em; margin-bottom: 4px;
-  }
+  .metric { border: 1.5px solid #e5e7eb; border-radius: 8px; padding: 10px 12px; background: #f9fafb; text-align: center; }
+  .metric .mlabel { font-size: 0.72rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
   .metric .mval { font-size: 1.05rem; font-weight: 700; }
   .metric .mval.ce-color  { color: #2563eb; }
   .metric .mval.mse-color { color: #f59e0b; }
-
   .gradient-bar-section { margin-top: 8px; }
   .gbar-label { font-size: 0.78rem; color: #666; margin-bottom: 3px; }
   .gbar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
@@ -97,11 +56,10 @@
   .gbar-fill.ce  { background: #2563eb; }
   .gbar-fill.mse { background: #f59e0b; }
   .gbar-num { font-size: 0.78rem; font-weight: 600; width: 54px; text-align: right; }
-
-  #interactiveMsg {
-    font-size: 0.8rem; color: #555; margin-top: 8px;
-    min-height: 36px; line-height: 1.5;
-  }
+  #interactiveMsg { font-size: 0.8rem; color: #555; margin-top: 8px; min-height: 36px; line-height: 1.5; }
+  .legend { display: flex; gap: 16px; margin-bottom: 6px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 0.78rem; font-weight: 500; }
+  .legend-dot { width: 14px; height: 3px; border-radius: 2px; }
 </style>
 </head>
 <body>
@@ -112,6 +70,7 @@
 <div class="tabs">
   <button class="tab active" onclick="switchTab('formulas', event)">Formulas</button>
   <button class="tab" onclick="switchTab('curves', event)">Loss Curves</button>
+  <button class="tab" onclick="switchTab('sigmoid', event)">With Sigmoid</button>
   <button class="tab" onclick="switchTab('interactive', event)">Interactive Explorer</button>
 </div>
 
@@ -121,26 +80,20 @@
   <div class="formula-row">
     <div class="formula-box ce">
       <h4>🔵 Cross-Entropy (Log Loss)</h4>
-      <div style="margin:8px 0;font-size:0.9rem;">
-        <strong>ℒ<sub>CE</sub> = −[ y·log(ŷ) + (1−y)·log(1−ŷ) ]</strong>
-      </div>
+      <div style="margin:8px 0;font-size:0.9rem;"><strong>ℒ<sub>CE</sub> = −[ y·log(ŷ) + (1−y)·log(1−ŷ) ]</strong></div>
       <div style="color:#444;font-size:0.79rem;line-height:1.6;">
         <b>If y = 1:</b> <code>−log(ŷ)</code> — penalizes low confidence when true<br>
         <b>If y = 0:</b> <code>−log(1−ŷ)</code> — penalizes high confidence when false<br><br>
-        <b>Gradient w.r.t. ŷ:</b><br>
-        <code>∂ℒ/∂ŷ = (ŷ − y) / (ŷ(1−ŷ))</code>
+        <b>Gradient w.r.t. ŷ:</b><br><code>∂ℒ/∂ŷ = (ŷ − y) / (ŷ(1−ŷ))</code>
       </div>
     </div>
     <div class="formula-box mse">
       <h4>🟡 Mean Squared Error (MSE)</h4>
-      <div style="margin:8px 0;font-size:0.9rem;">
-        <strong>ℒ<sub>MSE</sub> = (y − ŷ)²</strong>
-      </div>
+      <div style="margin:8px 0;font-size:0.9rem;"><strong>ℒ<sub>MSE</sub> = (y − ŷ)²</strong></div>
       <div style="color:#444;font-size:0.79rem;line-height:1.6;">
         <b>If y = 1:</b> <code>(1 − ŷ)²</code> — quadratic penalty<br>
         <b>If y = 0:</b> <code>ŷ²</code> — quadratic penalty<br><br>
-        <b>Gradient w.r.t. ŷ:</b><br>
-        <code>∂ℒ/∂ŷ = 2(ŷ − y)</code>
+        <b>Gradient w.r.t. ŷ:</b><br><code>∂ℒ/∂ŷ = 2(ŷ − y)</code>
       </div>
     </div>
   </div>
@@ -152,21 +105,87 @@
   <div class="chart-row">
     <div class="chart-box">
       <h3>Loss as a function of predicted probability ŷ</h3>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#2563eb"></div>Cross-Entropy</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>MSE</div>
+      </div>
       <canvas id="lossChart"></canvas>
     </div>
     <div class="chart-box">
-      <h3>|Gradient| — how strongly the model is pushed to correct</h3>
+      <h3>|Gradient w.r.t. ŷ|</h3>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#2563eb"></div>Cross-Entropy</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>MSE</div>
+      </div>
       <canvas id="gradChart"></canvas>
     </div>
   </div>
   <div class="insight-row">
+    <div class="insight ce"><strong>🔵 Cross-Entropy</strong>Gradient → ∞ as ŷ → 0 (confident wrong prediction). The model receives an increasingly large correction signal the more wrong it is.</div>
+    <div class="insight mse"><strong>🟡 MSE</strong>Gradient = 2(ŷ − y), bounded between −2 and 2. The correction signal is always small — especially problematic when combined with a sigmoid activation.</div>
+  </div>
+</div>
+
+<!-- ── WITH SIGMOID ── -->
+<div id="panel-sigmoid" class="panel">
+  <p class="section-label">Gradient w.r.t. the logit z, where ŷ = σ(z) — chain rule through the sigmoid</p>
+  <div class="formula-row" style="margin-bottom:16px;">
+    <div class="formula-box ce">
+      <h4>🔵 CE + Sigmoid</h4>
+      <div style="font-size:0.79rem;line-height:1.8;color:#444;">
+        <code>∂ℒ<sub>CE</sub>/∂z = ∂ℒ/∂ŷ · σ′(z)</code><br>
+        <code style="padding-left:1em">= [(ŷ−y) / ŷ(1−ŷ)] · ŷ(1−ŷ)</code><br>
+        <code style="padding-left:1em">= <b>ŷ − y</b></code><br><br>
+        The σ′(z) term <b>cancels exactly</b>.<br>
+        Gradient is just the prediction error — never vanishes.
+      </div>
+    </div>
+    <div class="formula-box mse">
+      <h4>🟡 MSE + Sigmoid</h4>
+      <div style="font-size:0.79rem;line-height:1.8;color:#444;">
+        <code>∂ℒ<sub>MSE</sub>/∂z = ∂ℒ/∂ŷ · σ′(z)</code><br>
+        <code style="padding-left:1em">= 2(ŷ−y) · σ′(z)</code><br>
+        <code style="padding-left:1em">= <b>2(ŷ−y) · ŷ(1−ŷ)</b></code><br><br>
+        σ′(z) <b>stays in the expression</b>.<br>
+        Near z = ±∞, σ′(z) → 0 — gradient vanishes.
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;">
+    <span style="font-size:0.85rem;font-weight:500;">True label y:</span>
+    <select id="ySigLabel" onchange="drawSigmoidPanel()">
+      <option value="1">y = 1 (positive class)</option>
+      <option value="0">y = 0 (negative class)</option>
+    </select>
+  </div>
+
+  <div class="chart-row">
+    <div class="chart-box">
+      <h3>σ(z) and σ′(z) — sigmoid and its derivative</h3>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#059669"></div>σ(z)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#7c3aed"></div>σ′(z)</div>
+      </div>
+      <canvas id="sigmoidChart"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>|∂ℒ/∂z| — gradient w.r.t. logit z</h3>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#2563eb"></div>CE + sigmoid</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>MSE + sigmoid</div>
+      </div>
+      <canvas id="sigGradChart"></canvas>
+    </div>
+  </div>
+  <div class="insight-row">
     <div class="insight ce">
-      <strong>🔵 Cross-Entropy</strong>
-      Gradient → ∞ as ŷ → 0 (confident wrong prediction). The model receives an increasingly large correction signal the more wrong it is.
+      <strong>🔵 CE + Sigmoid — no vanishing gradient</strong>
+      |∂ℒ<sub>CE</sub>/∂z| = |ŷ−y|. When the model is maximally wrong (z → −∞ for y=1), ŷ→0 so the gradient → 1. Always a meaningful signal.
     </div>
     <div class="insight mse">
-      <strong>🟡 MSE</strong>
-      Gradient = 2(ŷ − y), bounded between −2 and 2. The correction signal is always small — especially problematic when combined with a sigmoid activation.
+      <strong>🟡 MSE + Sigmoid — vanishing gradient</strong>
+      |∂ℒ<sub>MSE</sub>/∂z| = 2|ŷ−y|·ŷ(1−ŷ). At the extremes σ′(z)→0, so the gradient collapses to 0 exactly when the prediction is most wrong.
     </div>
   </div>
 </div>
@@ -187,20 +206,18 @@
       <div class="val-badge" id="yhatVal">0.50</div>
     </div>
   </div>
-
   <div class="metric-grid">
-    <div class="metric"><div class="mlabel">CE Loss</div><div class="mval ce-color"  id="ceVal">—</div></div>
+    <div class="metric"><div class="mlabel">CE Loss</div><div class="mval ce-color" id="ceVal">—</div></div>
     <div class="metric"><div class="mlabel">MSE Loss</div><div class="mval mse-color" id="mseVal">—</div></div>
-    <div class="metric"><div class="mlabel">CE Gradient</div><div class="mval ce-color"  id="ceGradVal">—</div></div>
+    <div class="metric"><div class="mlabel">CE Gradient</div><div class="mval ce-color" id="ceGradVal">—</div></div>
     <div class="metric"><div class="mlabel">MSE Gradient</div><div class="mval mse-color" id="mseGradVal">—</div></div>
   </div>
-
   <div class="gradient-bar-section">
     <div class="gbar-label">Gradient magnitude comparison (CE clipped at 20 for display — it is unbounded)</div>
     <div class="gbar-row">
       <div class="gbar-name" style="color:#2563eb;">Cross-Entropy</div>
-      <div class="gbar-track"><div class="gbar-fill ce"  id="ceBar"  style="width:50%"></div></div>
-      <div class="gbar-num ce-color"  id="ceBarNum">—</div>
+      <div class="gbar-track"><div class="gbar-fill ce" id="ceBar" style="width:50%"></div></div>
+      <div class="gbar-num ce-color" id="ceBarNum">—</div>
     </div>
     <div class="gbar-row">
       <div class="gbar-name" style="color:#f59e0b;">MSE</div>
@@ -208,10 +225,7 @@
       <div class="gbar-num mse-color" id="mseBarNum">—</div>
     </div>
   </div>
-
-  <canvas id="interactiveChart"
-    style="margin-top:16px;border:1.5px solid #e5e7eb;border-radius:8px;background:#f9fafb;display:block;">
-  </canvas>
+  <canvas id="interactiveChart" style="margin-top:16px;border:1.5px solid #e5e7eb;border-radius:8px;background:#f9fafb;display:block;"></canvas>
   <div id="interactiveMsg"></div>
 </div>
 
@@ -220,28 +234,31 @@ const CE       = (y, p) => -(y * Math.log(p) + (1 - y) * Math.log(1 - p));
 const MSE      = (y, p) => (y - p) ** 2;
 const CE_grad  = (y, p) => (p - y) / (p * (1 - p));
 const MSE_grad = (y, p) => 2 * (p - y);
+const sig      = z => 1 / (1 + Math.exp(-z));
+const sigP     = z => { const s = sig(z); return s * (1 - s); };
 
-const N        = 300;
-const xs_loss  = Array.from({length: N}, (_, i) => 0.01 + i * 0.98 / (N - 1));
-const xs_grad  = Array.from({length: N}, (_, i) => 0.05 + i * 0.90 / (N - 1));
+const N       = 300;
+const xs_loss = Array.from({length: N}, (_, i) => 0.01 + i * 0.98 / (N - 1));
+const xs_grad = Array.from({length: N}, (_, i) => 0.05 + i * 0.90 / (N - 1));
+const xs_z    = Array.from({length: N}, (_, i) => -6 + i * 12 / (N - 1));
 
 function drawChart(canvasId, datasets, opts) {
   opts = opts || {};
-  const xs     = opts.xs    || xs_loss;
-  const yClip  = opts.yClip !== undefined ? opts.yClip : null;
+  const xs    = opts.xs    || xs_loss;
+  const yClip = opts.yClip !== undefined ? opts.yClip : null;
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
 
-  const dpr      = window.devicePixelRatio || 1;
-  const dispH    = opts.height || 200;
+  const dpr   = window.devicePixelRatio || 1;
+  const dispH = opts.height || 200;
   canvas.style.height = dispH + 'px';
-  canvas.width   = canvas.offsetWidth * dpr;
-  canvas.height  = dispH * dpr;
-  const ctx      = canvas.getContext('2d');
+  canvas.width  = canvas.offsetWidth * dpr;
+  canvas.height = dispH * dpr;
+  const ctx = canvas.getContext('2d');
   ctx.resetTransform();
   ctx.scale(dpr, dpr);
   const w = canvas.offsetWidth, h = dispH;
-  const pad = {l: 44, r: 20, t: 14, b: 30};
+  const pad = {l: 46, r: 20, t: 14, b: 30};
   const pw = w - pad.l - pad.r, ph = h - pad.t - pad.b;
 
   ctx.clearRect(0, 0, w, h);
@@ -256,7 +273,8 @@ function drawChart(canvasId, datasets, opts) {
   if (yClip !== null) ymax = Math.min(ymax, yClip);
   const yrng = ymax - ymin || 1;
 
-  const tx = x  => pad.l + (x - xs[0]) / (xs[xs.length - 1] - xs[0]) * pw;
+  const xmin = xs[0], xmax = xs[xs.length - 1];
+  const tx = x  => pad.l + (x - xmin) / (xmax - xmin) * pw;
   const ty = yv => pad.t + ph - (Math.min(yv, ymax) - ymin) / yrng * ph;
 
   // Grid
@@ -265,13 +283,20 @@ function drawChart(canvasId, datasets, opts) {
     const yv = ymin + i / 4 * yrng;
     ctx.beginPath(); ctx.moveTo(pad.l, ty(yv)); ctx.lineTo(pad.l + pw, ty(yv)); ctx.stroke();
     ctx.fillStyle = '#999'; ctx.font = '10px sans-serif'; ctx.textAlign = 'right';
-    ctx.fillText(yv < 10 ? yv.toFixed(1) : Math.round(yv), pad.l - 5, ty(yv) + 4);
+    ctx.fillText(yv < 10 ? yv.toFixed(2) : Math.round(yv), pad.l - 5, ty(yv) + 4);
   }
   for (let i = 0; i <= 5; i++) {
-    const xv = xs[0] + i / 5 * (xs[xs.length - 1] - xs[0]);
+    const xv = xmin + i / 5 * (xmax - xmin);
     ctx.beginPath(); ctx.moveTo(tx(xv), pad.t); ctx.lineTo(tx(xv), pad.t + ph); ctx.stroke();
     ctx.fillStyle = '#999'; ctx.font = '10px sans-serif'; ctx.textAlign = 'center';
     ctx.fillText(xv.toFixed(1), tx(xv), pad.t + ph + 16);
+  }
+
+  // Vertical zero line for logit-domain charts
+  if (xmin < 0 && xmax > 0) {
+    ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 1; ctx.setLineDash([3, 3]);
+    ctx.beginPath(); ctx.moveTo(tx(0), pad.t); ctx.lineTo(tx(0), pad.t + ph); ctx.stroke();
+    ctx.setLineDash([]);
   }
 
   // Axes
@@ -286,20 +311,15 @@ function drawChart(canvasId, datasets, opts) {
     d.ys.forEach((yv, i) => {
       const xv = xs[i];
       if (!isFinite(yv)) { started = false; return; }
-      if (yClip !== null && yv > yClip) {
-        wentOff = true; lastOffX = xv; started = false; return;
-      }
+      if (yClip !== null && yv > yClip) { wentOff = true; lastOffX = xv; started = false; return; }
       if (!started) { ctx.moveTo(tx(xv), ty(yv)); started = true; }
-      else           ctx.lineTo(tx(xv), ty(yv));
+      else ctx.lineTo(tx(xv), ty(yv));
     });
     ctx.stroke();
-
     if (wentOff && opts.infLabel) {
       const axPx = lastOffX !== null ? tx(lastOffX) : pad.l + pw * 0.08;
       ctx.save();
-      ctx.font = 'bold 11px sans-serif';
-      ctx.fillStyle = d.color;
-      ctx.textAlign = 'left';
+      ctx.font = 'bold 11px sans-serif'; ctx.fillStyle = d.color; ctx.textAlign = 'left';
       ctx.fillText('→ ∞', Math.max(pad.l + 2, axPx - 30), pad.t + 12);
       ctx.restore();
     }
@@ -311,7 +331,7 @@ function drawChart(canvasId, datasets, opts) {
     ctx.beginPath(); ctx.moveTo(tx(opts.pointX), pad.t); ctx.lineTo(tx(opts.pointX), pad.t + ph); ctx.stroke();
     ctx.setLineDash([]);
     datasets.forEach(d => {
-      const idx = Math.round((opts.pointX - xs[0]) / (xs[xs.length - 1] - xs[0]) * (xs.length - 1));
+      const idx = Math.round((opts.pointX - xmin) / (xmax - xmin) * (xs.length - 1));
       const yv  = d.ys[Math.max(0, Math.min(xs.length - 1, idx))];
       if (!isFinite(yv) || (yClip !== null && yv > yClip)) return;
       ctx.beginPath(); ctx.arc(tx(opts.pointX), ty(yv), 5, 0, Math.PI * 2);
@@ -321,7 +341,19 @@ function drawChart(canvasId, datasets, opts) {
   }
 
   ctx.fillStyle = '#888'; ctx.font = '11px sans-serif'; ctx.textAlign = 'center';
-  ctx.fillText('ŷ (predicted probability)', pad.l + pw / 2, h - 2);
+  ctx.fillText(opts.xlabel || 'ŷ (predicted probability)', pad.l + pw / 2, h - 2);
+}
+
+function drawSigmoidPanel() {
+  const y = parseFloat(document.getElementById('ySigLabel').value);
+  drawChart('sigmoidChart',
+    [{ys: xs_z.map(z => sig(z)),  color: '#059669'},
+     {ys: xs_z.map(z => sigP(z)), color: '#7c3aed'}],
+    {xs: xs_z, yClip: null, xlabel: 'z (logit)', height: 200});
+  drawChart('sigGradChart',
+    [{ys: xs_z.map(z => Math.abs(sig(z) - y)),                  color: '#2563eb'},
+     {ys: xs_z.map(z => Math.abs(2 * (sig(z) - y) * sigP(z))), color: '#f59e0b'}],
+    {xs: xs_z, yClip: null, xlabel: 'z (logit)', height: 200});
 }
 
 function drawCurves() {
@@ -329,7 +361,6 @@ function drawCurves() {
     [{ys: xs_loss.map(x => CE(1, x)),  color: '#2563eb'},
      {ys: xs_loss.map(x => MSE(1, x)), color: '#f59e0b'}],
     {xs: xs_loss, yClip: 5, infLabel: true, height: 200});
-
   drawChart('gradChart',
     [{ys: xs_grad.map(x => Math.abs(CE_grad(1, x))),  color: '#2563eb'},
      {ys: xs_grad.map(x => Math.abs(MSE_grad(1, x))), color: '#f59e0b'}],
@@ -340,30 +371,25 @@ function updateInteractive() {
   const y    = parseFloat(document.getElementById('yLabel').value);
   const yhat = parseFloat(document.getElementById('yhatSlider').value);
   document.getElementById('yhatVal').textContent = yhat.toFixed(2);
-
-  const ce   = CE(y, yhat),   mse  = MSE(y, yhat);
-  const ceg  = CE_grad(y, yhat), mseg = MSE_grad(y, yhat);
-
-  document.getElementById('ceVal').textContent     = ce.toFixed(3);
-  document.getElementById('mseVal').textContent    = mse.toFixed(3);
+  const ce = CE(y, yhat), mse = MSE(y, yhat);
+  const ceg = CE_grad(y, yhat), mseg = MSE_grad(y, yhat);
+  document.getElementById('ceVal').textContent      = ce.toFixed(3);
+  document.getElementById('mseVal').textContent     = mse.toFixed(3);
   document.getElementById('ceGradVal').textContent  = ceg.toFixed(3);
   document.getElementById('mseGradVal').textContent = mseg.toFixed(3);
-
   const CLIP = 20;
   document.getElementById('ceBar').style.width    = Math.min(Math.abs(ceg)  / CLIP, 1) * 100 + '%';
   document.getElementById('mseBar').style.width   = Math.min(Math.abs(mseg) / CLIP, 1) * 100 + '%';
   document.getElementById('ceBarNum').textContent  = Math.abs(ceg)  > 99 ? '>99' : Math.abs(ceg).toFixed(2);
   document.getElementById('mseBarNum').textContent = Math.abs(mseg).toFixed(2);
-
-  const veryWrong = (y === 1 && yhat < 0.1) || (y === 0 && yhat > 0.9);
-  const wrong     = (y === 1 && yhat < 0.3) || (y === 0 && yhat > 0.7);
-  const right     = (y === 1 && yhat > 0.7) || (y === 0 && yhat < 0.3);
+  const veryWrong = (y===1 && yhat<0.1)||(y===0 && yhat>0.9);
+  const wrong     = (y===1 && yhat<0.3)||(y===0 && yhat>0.7);
+  const right     = (y===1 && yhat>0.7)||(y===0 && yhat<0.3);
   document.getElementById('interactiveMsg').textContent =
     veryWrong ? '⚠️ Very wrong prediction! CE gradient is very large (→ ∞ at the extremes) — strong correction signal. MSE gradient stays bounded near 2.' :
     wrong     ? '📉 Wrong prediction. CE is penalizing strongly. MSE is moderate.' :
     right     ? '✅ Correct and confident. Both losses near zero. Little gradient — model barely updates.' :
                 '🔸 Uncertain prediction near 0.5. Gradients are moderate for both losses.';
-
   drawChart('interactiveChart',
     [{ys: xs_loss.map(x => CE(y, x)),  color: '#2563eb'},
      {ys: xs_loss.map(x => MSE(y, x)), color: '#f59e0b'}],
@@ -376,11 +402,13 @@ function switchTab(name, e) {
   document.getElementById('panel-' + name).classList.add('active');
   e.target.classList.add('active');
   if (name === 'curves')      setTimeout(drawCurves, 10);
+  if (name === 'sigmoid')     setTimeout(drawSigmoidPanel, 10);
   if (name === 'interactive') setTimeout(updateInteractive, 10);
 }
 
 window.addEventListener('resize', () => {
   if (document.getElementById('panel-curves').classList.contains('active'))      drawCurves();
+  if (document.getElementById('panel-sigmoid').classList.contains('active'))     drawSigmoidPanel();
   if (document.getElementById('panel-interactive').classList.contains('active')) updateInteractive();
 });
 </script>
